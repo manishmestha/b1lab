@@ -1,40 +1,54 @@
 {
-  "name": "frontend",
+  "name": "blockchain-certificate-platform",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
+  "description": "Blockchain-Based Academic Certificate Verification & Digital Credential Management Platform",
   "scripts": {
-    "dev": "npx --no-install vite",
-    "build": "npx --no-install tsc && npx --no-install vite build",
-    "preview": "npx --no-install vite preview",
-    "typecheck": "npx --no-install tsc --noEmit",
-    "lint": "npx --no-install eslint src --ext .ts,.tsx"
+    "install:all": "npm install --prefix backend && npm install --prefix frontend && npm install --prefix blockchain",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build:backend": "npm run build --prefix backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "build:blockchain": "npm run build --prefix blockchain",
+    "build": "npm run build:backend && npm run build:frontend && npm run build:blockchain",
+    "typecheck:backend": "npm run typecheck --prefix backend",
+    "typecheck:frontend": "npm run typecheck --prefix frontend",
+    "typecheck:blockchain": "npm run typecheck --prefix blockchain",
+    "typecheck": "npm run typecheck:backend && npm run typecheck:frontend && npm run typecheck:blockchain",
+    "lint:backend": "npm run lint --prefix backend",
+    "lint:frontend": "npm run lint --prefix frontend",
+    "lint:blockchain": "npm run lint --prefix blockchain",
+    "lint": "npm run lint:backend && npm run lint:frontend && npm run lint:blockchain",
+    "db:migrate": "npm run db:migrate --prefix backend",
+    "db:seed": "npm run db:seed --prefix backend",
+    "db:setup": "npm run db:setup --prefix backend",
+    "test:db": "npm run test --prefix backend",
+    "test:backend": "npm run test --prefix backend",
+    "test:blockchain": "npm run test --prefix blockchain",
+    "test": "npm run test:backend && npm run test:blockchain"
   },
   "dependencies": {
-    "clsx": "^2.1.0",
-    "framer-motion": "^13.1.1",
-    "lucide-react": "^0.368.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^7.18.2",
-    "tailwind-merge": "^2.2.2",
-    "three": "^0.185.1"
+    "bcryptjs": "^2.4.3",
+    "sql.js": "^1.10.3"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
-    "@types/react-router-dom": "^5.3.3",
-    "@types/three": "^0.185.4",
-    "@typescript-eslint/eslint-plugin": "^7.7.0",
-    "@typescript-eslint/parser": "^7.7.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.8"
-  }
+    "hardhat": "^2.22.3",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "solidity",
+    "academic-certificates",
+    "verification",
+    "ipfs",
+    "react",
+    "typescript",
+    "sqlite"
+  ],
+  "author": "Engineering Team",
+  "license": "MIT"
 }
